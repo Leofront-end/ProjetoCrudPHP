@@ -7,3 +7,9 @@
   <h2>Diferença de CHAR e VarCHAR</h2>
   - Char: ocupa os 50 caracteres mesmo que menos / Utilizar o char se for um valor fixo <br>
   - VarChar: se tiver 25 ocupara 25 mesmo que tenha 50 definido
+
+  <h2>CRUD</h2>
+  C Create SQL - Insert
+  R Read - Select
+  U Update
+  D Delete
