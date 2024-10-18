@@ -1,3 +1,20 @@
+<?php 
+    //1º incluir o arquivo de conexão com o banco de dados
+    include "database.php";
+
+    //2º Resgatar o id passado via GET
+    $id_aluno = $_GET['id_aluno'];
+
+    //3º Declarar uma variavel para receber a instrução de SQL
+    $sql_por_id = "SELECT * FROM cadastro_alunos WHERE cadastro_alunos.id = '$id_aluno' ";
+
+    //4º Declarar uma variavel para executar a funçao mysqli_query que necessita de dois parametros, sendo eles, a variavel de conexão ao banco de dados e a instrução  em SQL
+    $resultado_consulta_por_id = mysqli_query($conexao, $sql_por_id);
+
+    //5º Declarar uma variavel para receber a funcção que converte o resultado em um array associativo 
+    $dados_id = mysqli_fetch_assoc($resultado_consulta_por_id);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -11,13 +28,13 @@
 
         <form action="atualizar_cadastro.php" method="post">
             <label for="nome_aluno" class="minhaClasse">Nome: </label>
-            <input type="text" name="nome_aluno" id="nome_aluno" placeholder="Informe seu nome: ">
+            <input type="text" name="nome_aluno" id="nome_aluno"  value=<?php echo $dados_id['nome_aluno'] ?>>
 
             <label for="email_aluno">E-mail: </label>
-            <input type="text" name="email_aluno" id="email_aluno" placeholder="Informe seu email: ">
+            <input type="text" name="email_aluno" id="email_aluno" value=<?php echo $dados_id['email_aluno'] ?> >
 
             <label for="celular_aluno">Celular: </label>
-            <input type="text" name="celular_aluno" id="celular_aluno" placeholder="Informe seu telefone: ">
+            <input type="text" name="celular_aluno" id="celular_aluno" value=<?php echo $dados_id['celular_aluno'] ?>>
 
             <input type="submit" value="Atualizar">
         </form>

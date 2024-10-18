@@ -35,4 +35,5 @@ thead {
 tbody > tr:nth-child(odd):hover,tbody > tr:hover {
     background-color: #858585;
     transition: ease-out 1s;
+    
 }
