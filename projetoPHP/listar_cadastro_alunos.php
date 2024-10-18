@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/listar.css">
-    <title>Document</title>
+    <title>Lista Cadastro</title>
 </head>
 <body>
     <table border = '1'>
@@ -24,26 +24,29 @@
                 <th>Nome :</th>
                 <th>Email: </th>
                 <th>Celular: </th>
+                <th>Atualizar </th>
+                <th>Excluir </th>
             </tr>
         </thead>
         <tbody>
             <?php
                 while ($dados = mysqli_fetch_assoc($resultado)){
-
-
             ?>
             <tr>
                 <td><?php echo $dados['nome_aluno']; ?></td>
                 <td><?php echo $dados['email_aluno']; ?></td>
                 <td><?php echo $dados['celular_aluno'] ?></td>
+                <td><a href="form_atualizar_cadastro.php?id_aluno=<?php echo $dados['id'] ?>">Atualizar</a></td>
+                <td><a href="excluir_cadastro.php?id_aluno=<?php echo $dados['id'] ?>">Excluir</a></td>
             </tr>
             <?php
                 }
             ?>
 
-            
+            <h3><a href="../aula2/index.php">Voltar</a></h3>
         </tbody>
-        <h3><a href="../aula2/index.php">Voltar</a></h3>
+        
     </table>
+    
 </body>
 </html>

@@ -15,7 +15,7 @@
     // Criar uma condicional para inserção de valores no banco de dados
     
     if (mysqli_query($conexao, $sql)) {
-        echo "Cadastro realizado com sucesso";
+        header("Location: listar_cadastro_alunos.php");
     } else {
         echo "Erro ao cadastrar";
     }

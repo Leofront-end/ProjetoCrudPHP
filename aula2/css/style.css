@@ -1,0 +1,22 @@
+/* 
+    COMENTARIO
+    EM
+    BLOCO
+*/
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    background-color: #31bdd6;
+}
+
+h1 {
+    margin: 20px 15px 55px 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color:rgb(255, 0, 0)
+}
+
+p img{
+    width: 20%;
+}
